@@ -1,12 +1,9 @@
 package com.example.xoro
-
-import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_game.*
 
 
@@ -35,79 +32,94 @@ class Game() : AppCompatActivity(){
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
         //Variable inform which player have turn
-        var gracz = 1
-        val plansza = arrayListOf<Int>()
-        var ruchy = 0
+        var player = Player.X
+        val gameBoard = arrayListOf<Field>()
+        var moves = 0
+        var buttons = arrayListOf<Button>()
 
-        for(i in 0..8){
-            plansza.add(9)
-        }
+        buttons.add(b1)
+        buttons.add(b2)
+        buttons.add(b3)
+        buttons.add(b4)
+        buttons.add(b5)
+        buttons.add(b6)
+        buttons.add(b7)
+        buttons.add(b8)
+        buttons.add(b9)
 
+        gameBoard.add(Field(1, arrayOf(Directions.South,Directions.East, Directions.South_East)))
+        gameBoard.add(Field(2, arrayOf(Directions.South,Directions.East, Directions.West)))
+        gameBoard.add(Field(3, arrayOf(Directions.South,Directions.South_West, Directions.West)))
+        gameBoard.add(Field(4, arrayOf(Directions.South,Directions.East,Directions.North)))
+        gameBoard.add(Field(5, arrayOf(Directions.South,Directions.East, Directions.South_West,Directions.South_East,Directions.North, Directions.North_West, Directions.Nort_East, Directions.West)))
+        gameBoard.add(Field(6, arrayOf(Directions.South,Directions.West,Directions.North)))
+        gameBoard.add(Field(7, arrayOf(Directions.East,Directions.North, Directions.Nort_East)))
+        gameBoard.add(Field(8, arrayOf(Directions.East, Directions.West, Directions.North)))
+        gameBoard.add(Field(9, arrayOf(Directions.West, Directions.North, Directions.North_West)))
 
             b1.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b1,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,0,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b1,showPlayer ,winner, buttons,0,moves)
                 b1.isClickable = false
 
             }
 
             b2.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b2,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,1,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b2,showPlayer ,winner,buttons,1,moves)
                 b2.isClickable = false
 
             }
 
             b3.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b3,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,2,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b3,showPlayer ,winner,buttons,2,moves)
                 b3.isClickable = false
 
             }
 
             b4.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b4,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,3,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b4,showPlayer ,winner,buttons,3,moves)
                 b4.isClickable = false
 
             }
 
             b5.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b5,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,4,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b5,showPlayer ,winner,buttons,4,moves)
                 b5.isClickable = false
 
             }
 
             b6.setOnClickListener {
-                gracz = graj(plansza, gracz,b6,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,5,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b6,showPlayer ,winner,buttons,5,moves)
                 b6.isClickable = false
-                ruchy += 1
+
             }
 
             b7.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b7,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,6,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b7,showPlayer ,winner,buttons,6,moves)
                 b7.isClickable = false
 
             }
 
             b8.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b8,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,7,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b8,showPlayer ,winner,buttons,7,moves)
                 b8.isClickable = false
 
             }
 
             b9.setOnClickListener {
-                ruchy += 1
-                gracz = graj(plansza, gracz,b9,wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9,8,ruchy)
+                moves += 1
+                player = play(gameBoard, player,b9,showPlayer ,winner,buttons,8,moves)
                 b9.isClickable = false
 
 
             }
-
-
 
             end.setOnClickListener {
                 mediaPlayer?.stop()
@@ -115,14 +127,13 @@ class Game() : AppCompatActivity(){
 
             }
 
-
             reset.setOnClickListener {
                 for(i in 0..8){
-                    plansza[i] = 9
+                    gameBoard[i].setOwner(Owner.empty)
                 }
-                gracz = 1
-                ruchy = 0
-                resetuj(wys_gracza ,wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+                player = Player.X
+                moves = 0
+                reset(showPlayer ,winner,buttons)
 
             }
 

@@ -8,11 +8,10 @@
     android:background="@drawable/background2">
 
     <TextView
-        android:id="@+id/wygrany"
+        android:id="@+id/winner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:text="Wygrał gracz 1"
         android:textAlignment="center"
@@ -21,21 +20,21 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/b2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/wys_gracza"
+        android:id="@+id/showPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="52dp"
-        android:text="Gracz 1 - X"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Gracz X"
         android:textAlignment="center"
         android:textColor="#FFEB3B"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/wygrany"
+        app:layout_constraintBottom_toTopOf="@+id/winner"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button

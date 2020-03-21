@@ -1,109 +1,105 @@
 package com.example.xoro
 
 
+
+import android.graphics.Color
 import android.widget.Button
 import android.widget.TextView
 
 
-fun sprawdz(wys_gracza: TextView,args: ArrayList<Int>, gracz:Int, wygrany: TextView ,b1: Button,b2: Button, b3: Button,b4: Button,b5: Button,b6: Button,b7: Button,b8: Button,b9: Button){
+fun threeInRow(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,buttons: ArrayList<Button>){
 
-    var flaga = false
-
-    if(
-        ((args[0] == args[1]) and (args[0] == args[2]) and (args[0] == gracz)) or
-        ((args[3] == args[4]) and (args[3] == args[5]) and (args[3] == gracz)) or
-        ((args[6] == args[7]) and (args[6] == args[8]) and (args[6] == gracz)) or
-        ((args[0] == args[3]) and (args[0] == args[6]) and (args[0] == gracz)) or
-        ((args[1] == args[4]) and (args[1] == args[7]) and (args[1] == gracz)) or
-        ((args[2] == args[5]) and (args[2] == args[8]) and (args[2] == gracz)) or
-        ((args[0] == args[4]) and (args[0] == args[8]) and (args[0] == gracz)) or
-        ((args[6] == args[4]) and (args[6] == args[2]) and (args[6] == gracz))
-    )
-    {
-        if(gracz == 1)
-        {
-            wygrany.setText("Wygrał gracz 1")
-            wygrany.visibility = TextView.VISIBLE
-            wys_gracza.setText("Koniec! ")
+    var flag = false
+    var neighbor = 0
+    var neighborTwo = 0
+    var player = Owner.empty
+    for(i in 0..8){
+        if(gameBoard[i].getOwner() == Owner.X || gameBoard[i].getOwner() == Owner.O){
+            for(j in gameBoard[i].getDirections()) {
+                neighbor = gameBoard[i].directionToID(j,i + 1)
+                if(gameBoard[i].getOwner() == gameBoard[neighbor-1].getOwner()) {
+                    for (k in gameBoard[neighbor - 1].getDirections()) {
+                        neighborTwo = gameBoard[neighbor - 1].directionToID(k, neighbor)
+                        if (gameBoard[i].getOwner() == gameBoard[neighborTwo - 1].getOwner() && j == k) {
+                            flag = true;
+                            player = gameBoard[i].getOwner()
+                            buttons[i].setBackgroundResource(R.drawable.winbuttons)
+                            buttons[neighbor-1].setBackgroundResource(R.drawable.winbuttons)
+                            buttons[neighborTwo-1].setBackgroundResource(R.drawable.winbuttons)
+                            buttons[i].setTextColor(Color.parseColor("#6f0000"))
+                            buttons[neighbor-1].setTextColor(Color.parseColor("#6f0000"))
+                            buttons[neighborTwo-1].setTextColor(Color.parseColor("#6f0000"))
+                            break
+                        }
+                    }
+                }
+            }
         }
-        else
-        {
-            wygrany.setText("Wygrał gracz 2")
-            wygrany.visibility = TextView.VISIBLE
-            wys_gracza.setText("Koniec! ")
-        }
-        flaga = true
     }
 
-    if (flaga)
-    {
-        b1.isClickable = false
-        b2.isClickable = false
-        b3.isClickable = false
-        b4.isClickable = false
-        b5.isClickable = false
-        b6.isClickable = false
-        b7.isClickable = false
-        b8.isClickable = false
-        b9.isClickable = false
+
+if (flag)
+{
+    for(i in 0..8) {
+        buttons[i].isClickable = false
     }
+
+    winner.setText("Wygrał gracz "+player.toString())
+    winner.visibility = TextView.VISIBLE
+    showPlayer.setText("Koniec! ")
+    showPlayer.visibility = TextView.VISIBLE
+}
+
 
 }
 
 
-fun graj(plansza: ArrayList<Int>, gracz:Int,b: Button, wys_gracza: TextView, wygrany: TextView ,b1: Button,b2: Button, b3: Button,b4: Button,b5: Button,b6: Button,b7: Button,b8: Button,b9: Button,id:Int,ruchy:Int ): Int
+fun play(
+    gameBoard: ArrayList<Field>, player: Player, b: Button, showPlayer: TextView, winner: TextView,buttons: ArrayList<Button>, id:Int, moves:Int): Player
 {
-    var tmp: Int
-    if(ruchy == 9 )
+    if(moves == 9)
     {
-        wygrany.setText("Remis!")
-        wygrany.visibility = TextView.VISIBLE
-    }
-    if (gracz == 1) {
-        wys_gracza.setText("Gracz 2 - O")
-        b.setText("X")
-        plansza[id] = 1
+        showPlayer.setText("Koniec! ")
+        winner.setText("Remis")
+        winner.visibility = TextView.VISIBLE
+        showPlayer.visibility = TextView.VISIBLE
+        threeInRow(showPlayer, gameBoard, winner,buttons)
 
-        sprawdz(wys_gracza,plansza, gracz, wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-        tmp = 2
-        return tmp
+        return Player.defalut
+    }
+     if (player == Player.X) {
+        showPlayer.setText("Gracz O")
+        b.setText("X")
+        gameBoard[id].setOwner(Owner.X)
+        threeInRow(showPlayer, gameBoard, winner,buttons)
+
+        return Player.O
 
     } else {
-        wys_gracza.setText("Gracz 1 - X")
+        showPlayer.setText("Gracz X")
         b.setText("O")
-        plansza[id] = 2
-        sprawdz(wys_gracza,plansza, gracz, wygrany,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-        tmp = 1
-        return tmp
+        gameBoard[id].setOwner(Owner.O)
+        threeInRow(showPlayer, gameBoard, winner,buttons)
+
+        return Player.X
 
     }
 
 
 }
 
-fun resetuj(wys_gracza: TextView, wygrany: TextView ,b1: Button,b2: Button, b3: Button,b4: Button,b5: Button,b6: Button,b7: Button,b8: Button,b9: Button){
+fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
 
-    b1.setText("")
-    b2.setText("")
-    b3.setText("")
-    b4.setText("")
-    b5.setText("")
-    b6.setText("")
-    b7.setText("")
-    b8.setText("")
-    b9.setText("")
+    for(i in 0..8) {
+        buttons[i].setText("")
+        buttons[i].isClickable = true
+        buttons[i].setBackgroundResource(R.drawable.buttons2)
+        buttons[i].setTextColor(Color.parseColor("#8BC34A"))
+    }
 
-    b1.isClickable = true
-    b2.isClickable = true
-    b3.isClickable = true
-    b4.isClickable = true
-    b5.isClickable = true
-    b6.isClickable = true
-    b7.isClickable = true
-    b8.isClickable = true
-    b9.isClickable = true
-
-    wygrany.visibility = TextView.INVISIBLE
-    wys_gracza.setText("Gracz 1 - X")
+    winner.visibility = TextView.INVISIBLE
+    showPlayer.setText("Gracz 1 - X")
 
 }
+
+
