@@ -1,11 +1,8 @@
 package com.example.xoro
-
 import android.content.Intent
-import android.icu.text.IDNA
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -26,24 +23,23 @@ class MainActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
-        //Wychodzenie z aplikacji
-        BT_Wyjdz.setOnClickListener{
+        btExit.setOnClickListener{
             finish()
             System.exit(0)
         }
 
-        //Odpalanie pomocy
-        BT_Pomoc.setOnClickListener {
-            var pomoc: Intent = Intent(applicationContext, info::class.java)
-            startActivity(pomoc)
+        btHelp.setOnClickListener {
+            var help: Intent = Intent(applicationContext, info::class.java)
+            startActivity(help)
         }
 
-        //Odpalanie gry
-        BT_Start.setOnClickListener {
-            var graj: Intent = Intent(applicationContext, Game::class.java)
-            startActivity(graj)
+        btStartGame.setOnClickListener {
+            var startGame: Intent = Intent(applicationContext, Game::class.java)
+            startActivity(startGame)
+            }
+
         }
+
     }
 
 
-}

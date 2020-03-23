@@ -11,3 +11,7 @@ enum class Owner {
 enum class Player{
     X, O, defalut
 }
+
+enum class difficultLevel{
+    Easy, Medium, Hard
+}

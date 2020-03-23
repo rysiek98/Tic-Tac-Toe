@@ -24,13 +24,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BT_Start"
+        android:id="@+id/btStartGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="304dp"
         android:background="@drawable/buttons"
         android:padding="5dp"
-        android:text="Start"
+        android:text="Graj"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BT_Pomoc"
+        android:id="@+id/btHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -48,10 +48,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BT_Start" />
+        app:layout_constraintTop_toBottomOf="@+id/btStartGame" />
 
     <Button
-        android:id="@+id/BT_Wyjdz"
+        android:id="@+id/btExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
@@ -61,6 +61,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BT_Pomoc"
+        app:layout_constraintTop_toBottomOf="@+id/btHelp"
         app:layout_constraintVertical_bias="0.193" />
 </androidx.constraintlayout.widget.ConstraintLayout>

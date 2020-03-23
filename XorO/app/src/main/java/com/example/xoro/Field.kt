@@ -3,7 +3,7 @@ package com.example.xoro
 
 
 
-class Field(ID: Int, Directions: Array<Directions>) {
+class Field(ID: Int,Directions: Array<Directions>) {
 
     private var ID = ID
     private var Owner = com.example.xoro.Owner.empty
