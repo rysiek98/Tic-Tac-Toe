@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".StartDialog">
+
+    <TextView
+        android:id="@+id/tviewChoseGameType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wybierz rodzaj gry:"
+        android:textAlignment="center"
+        android:textColor="#0B0A0A"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/rgAIvsPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gracz"
+            android:textColor="#090909"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbAI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI"
+            android:textColor="#070707"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tviewChooseDifficlut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Wybierz poziom trudnosci:"
+        android:textAlignment="center"
+        android:textColor="#0B0A0A"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/rgDifficlutlevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbEasy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Latwy"
+            android:textColor="#121111"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sredni"
+            android:textColor="#0C0C0C"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbHard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trudny"
+            android:textColor="#1B1919"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btBack"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/buttons"
+                android:text="Wróc"
+                android:textColor="#151515"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btPlay"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/buttons"
+                android:text="Graj"
+                android:textColor="#1C1B1B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RadioGroup>
+
+</LinearLayout>

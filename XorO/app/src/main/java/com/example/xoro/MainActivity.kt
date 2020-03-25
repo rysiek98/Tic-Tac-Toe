@@ -1,9 +1,15 @@
 package com.example.xoro
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.start_dialog.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,13 +39,30 @@ class MainActivity : AppCompatActivity() {
             startActivity(help)
         }
 
-        btStartGame.setOnClickListener {
-            var startGame: Intent = Intent(applicationContext, Game::class.java)
-            startActivity(startGame)
+            btStartGame.setOnClickListener {
+                val dialogView = LayoutInflater.from(this).inflate(R.layout.start_dialog, null)
+                val mBuilder = AlertDialog.Builder(this).setView(dialogView)
+                val mAlert = mBuilder.show()
+                dialogView.rgAIvsPlayer.setOnCheckedChangeListener { group, checkedId ->
+                            val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
+                    dialogView.rgDifficlutlevel.setOnCheckedChangeListener { group, checkedId ->
+                                val rbdifficultLevel: RadioButton = dialogView.findViewById(checkedId)
+                            dialogView.btPlay.setOnClickListener {
+                                    var startGame: Intent = Intent(applicationContext,Game::class.java)
+                                     startGame.putExtra("ID_gameType", gameTypeData.text)
+                                     startGame.putExtra("ID_difficult", rbdifficultLevel.text)
+                                    startActivity(startGame)
+                                    mAlert.dismiss()
+                                }
+                        }
+                }
+                dialogView.btBack.setOnClickListener {
+                    mAlert.dismiss()
+                }
             }
-
-        }
-
     }
+}
+
+
 
 

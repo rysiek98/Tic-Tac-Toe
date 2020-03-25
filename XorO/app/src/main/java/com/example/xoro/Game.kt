@@ -1,9 +1,11 @@
 package com.example.xoro
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_game.*
 
 
@@ -13,8 +15,15 @@ class Game() : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        var playervsPlayer = false
-        var difficultLevel: difficultLevel
+        var bundle :Bundle ?=intent.extras
+        var gameType = bundle!!.getString("ID_gameType")
+       // var difficultLevel = bundle!!.getString("ID_difficult")
+        var playervsPlayer: Boolean
+        if(gameType == "Gracz"){
+         playervsPlayer = true
+        }else{
+            playervsPlayer = false
+        }
         var mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.music)
         if (mediaPlayer != null) {
             mediaPlayer.start()
