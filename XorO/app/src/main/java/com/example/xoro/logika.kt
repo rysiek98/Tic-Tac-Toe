@@ -43,9 +43,9 @@ fun threeInRow(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextVi
             buttons[i].isClickable = false
      }
 
-        winner.setText("Wygrał gracz "+player.toString())
+        winner.setText("The winner is "+player.toString())
         winner.visibility = TextView.VISIBLE
-        showPlayer.setText("Koniec! ")
+        showPlayer.setText("End game!")
         showPlayer.visibility = TextView.VISIBLE
         return true
     }else{
@@ -62,8 +62,8 @@ fun play(
     if(moves > 8)
     {
         b.setText("X")
-        showPlayer.setText("Koniec! ")
-        winner.setText("Remis")
+        showPlayer.setText("End game!")
+        winner.setText("Draw!")
         winner.visibility = TextView.VISIBLE
         showPlayer.visibility = TextView.VISIBLE
         threeInRow(showPlayer, gameBoard, winner,buttons)
@@ -71,7 +71,7 @@ fun play(
         return Player.defalut
     }else {
         if (player == Player.X) {
-            showPlayer.setText("Gracz O")
+            showPlayer.setText("Player O")
             b.setText("X")
             gameBoard[id].setOwner(Owner.X)
             threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -81,7 +81,7 @@ fun play(
                 return Player.O
             }
         } else {
-            showPlayer.setText("Gracz X")
+            showPlayer.setText("Player X")
             b.setText("O")
             gameBoard[id].setOwner(Owner.O)
             threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -101,7 +101,7 @@ fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
     }
 
     winner.visibility = TextView.INVISIBLE
-    showPlayer.setText("Gracz X")
+    showPlayer.setText("Player X")
 
 }
 
@@ -117,13 +117,13 @@ fun colorWinButtons(buttons: ArrayList<Button>,neighbor: Int, neighborTwo: Int, 
 fun firstMoveAi(showPlayer: TextView, gameBoard: ArrayList<Field>,buttons: ArrayList<Button>, moves: Int): Boolean{
     if(moves == 1){
         if(gameBoard[4].getOwner() == Owner.empty) {
-            showPlayer.setText("Gracz X")
+            showPlayer.setText("Player X")
             buttons[4].setText("O")
             gameBoard[4].setOwner(Owner.O)
             buttons[4].isClickable = false
 
         }else{
-            showPlayer.setText("Gracz X")
+            showPlayer.setText("Player X")
             buttons[0].setText("O")
             gameBoard[0].setOwner(Owner.O)
             buttons[0].isClickable = false
@@ -151,7 +151,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
                             neighborTwo =
                                 gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
                             if (gameBoard[neighborTwo - 1].getOwner() == Owner.X && fieldDirections == neighborDirections) {
-                                showPlayer.setText("Gracz X")
+                                showPlayer.setText("Player X")
                                 buttons[neighbor - 1].setText("O")
                                 gameBoard[neighbor - 1].setOwner(Owner.O)
                                 threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -164,7 +164,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
                             neighborTwo =
                                 gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
                             if (gameBoard[neighborTwo - 1].getOwner() == Owner.empty && fieldDirections == neighborDirections) {
-                                showPlayer.setText("Gracz X")
+                                showPlayer.setText("Player X")
                                 buttons[neighborTwo - 1].setText("O")
                                 gameBoard[neighborTwo - 1].setOwner(Owner.O)
                                 threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -189,7 +189,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
                             neighborTwo =
                                 gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
                             if (gameBoard[neighborTwo - 1].getOwner() == Owner.X && fieldDirections == neighborDirections) {
-                                showPlayer.setText("Gracz X")
+                                showPlayer.setText("Player X")
                                 buttons[neighbor - 1].setText("O")
                                 gameBoard[neighbor - 1].setOwner(Owner.O)
                                 threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -203,7 +203,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
                             neighborTwo =
                                 gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
                             if (gameBoard[neighborTwo - 1].getOwner() == Owner.empty && fieldDirections == neighborDirections) {
-                                showPlayer.setText("Gracz X")
+                                showPlayer.setText("Player X")
                                 buttons[neighborTwo - 1].setText("O")
                                 gameBoard[neighborTwo - 1].setOwner(Owner.O)
                                 threeInRow(showPlayer, gameBoard, winner, buttons)
@@ -224,7 +224,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
                     for (fieldDirections in gameBoard[field].getDirections()) {
                         neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
                         if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
-                            showPlayer.setText("Gracz X")
+                            showPlayer.setText("Player X")
                             buttons[neighbor - 1].setText("O")
                             gameBoard[neighbor - 1].setOwner(Owner.O)
                             threeInRow(showPlayer, gameBoard, winner, buttons)

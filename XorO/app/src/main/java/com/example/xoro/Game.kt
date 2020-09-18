@@ -19,7 +19,7 @@ class Game() : AppCompatActivity(){
         var gameType = bundle!!.getString("ID_gameType")
        // var difficultLevel = bundle!!.getString("ID_difficult")
         var playervsPlayer: Boolean
-        if(gameType == "Gracz"){
+        if(gameType == "Player"){
          playervsPlayer = true
         }else{
             playervsPlayer = false

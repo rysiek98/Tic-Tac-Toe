@@ -14,7 +14,7 @@
         android:id="@+id/tviewChoseGameType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wybierz rodzaj gry:"
+        android:text="Choose game type:"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="20sp"
@@ -29,7 +29,7 @@
             android:id="@+id/rbPlayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gracz"
+            android:text="Player"
             android:textColor="#090909"
             android:textSize="18sp" />
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Wybierz poziom trudnosci:"
+        android:text="Choose difficult level:"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="20sp"
@@ -63,7 +63,7 @@
             android:id="@+id/rbEasy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Latwy"
+            android:text="Easy"
             android:textColor="#121111"
             android:textSize="18sp" />
 
@@ -71,7 +71,7 @@
             android:id="@+id/rbMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sredni"
+            android:text="Medium"
             android:textColor="#0C0C0C"
             android:textSize="18sp" />
 
@@ -79,7 +79,7 @@
             android:id="@+id/rbHard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trudny"
+            android:text="Hard"
             android:textColor="#1B1919"
             android:textSize="18sp" />
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/buttons"
-                android:text="Wróc"
+                android:text="Back"
                 android:textColor="#151515"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/buttons"
-                android:text="Graj"
+                android:text="Play"
                 android:textColor="#1C1B1B"
                 android:textSize="20sp"
                 android:textStyle="bold" />

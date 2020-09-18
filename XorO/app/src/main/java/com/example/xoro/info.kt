@@ -1,11 +1,9 @@
 package com.example.xoro
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_info.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class info : AppCompatActivity() {
 
@@ -26,7 +24,7 @@ class info : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
         //Odpalanie pomocy
-        Wroc.setOnClickListener {
+        backBt.setOnClickListener {
             finish()
         }
     }
