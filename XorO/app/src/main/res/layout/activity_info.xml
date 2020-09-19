@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".info">
 
     <TextView
-        android:id="@+id/Naglowek"
+        android:id="@+id/rules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Pomoc"
+        android:text="Game Rules"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="#F10606"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Opis"
+        android:id="@+id/gameRules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="Tu bedzie kiedys opis"
-        android:textSize="18sp"
+        android:layout_marginTop="180dp"
+        android:padding="20dp"
+        android:text="@string/gameRules"
+        android:textColor="#120823"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
         android:layout_marginBottom="84dp"
-        android:text="Wróć"
+        android:background="@drawable/buttons2"
+        android:text="Back"
+        android:textColor="#FFEB3B"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
