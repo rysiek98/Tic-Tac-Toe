@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/start_dialog_shape"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingLeft="16dp"
+    android:paddingTop="10dp"
     android:paddingRight="16dp"
-    tools:context=".StartDialog">
+
+    android:paddingBottom="10dp"
+    android:visibility="visible">
 
     <TextView
         android:id="@+id/tviewChoseGameType"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:text="Choose game type:"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
@@ -22,7 +26,7 @@
 
     <RadioGroup
         android:id="@+id/rgAIvsPlayer"
-        android:layout_width="match_parent"
+        android:layout_width="296dp"
         android:layout_height="wrap_content">
 
         <RadioButton
@@ -46,7 +50,7 @@
     <TextView
         android:id="@+id/tviewChooseDifficlut"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="41dp"
         android:layout_marginTop="30dp"
         android:text="Choose difficult level:"
         android:textAlignment="center"
@@ -56,8 +60,8 @@
 
     <RadioGroup
         android:id="@+id/rgDifficlutlevel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="310dp"
+        android:layout_height="205dp">
 
         <RadioButton
             android:id="@+id/rbEasy"
