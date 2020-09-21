@@ -2,7 +2,9 @@ package com.example.xoro
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_game.*
 
@@ -24,14 +26,13 @@ class Game : AppCompatActivity(){
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
 
-        var bundle :Bundle ?=intent.extras
-        var gameType = bundle!!.getString("ID_gameType")
-        var playervsPlayer: Boolean
+        val bundle :Bundle ?=intent.extras
+        val gameType = bundle!!.getString("ID_gameType")
+        var playervsPlayer: Boolean = false
         if(gameType == "Player"){
          playervsPlayer = true
-        }else{
-            playervsPlayer = false
         }
+
         val mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.music)
         mediaPlayer?.start()
 
@@ -39,7 +40,7 @@ class Game : AppCompatActivity(){
         val gameBoard = arrayListOf<Field>()
         var moves = 0
         var buttons = arrayListOf<Button>()
-
+        //Game buttons
         buttons.add(b1)
         buttons.add(b2)
         buttons.add(b3)
@@ -49,6 +50,7 @@ class Game : AppCompatActivity(){
         buttons.add(b7)
         buttons.add(b8)
         buttons.add(b9)
+        //Each game button has some neighbourgs
         gameBoard.add(Field(1, arrayOf(Directions.South,Directions.East, Directions.South_East)))
         gameBoard.add(Field(2, arrayOf(Directions.South,Directions.East, Directions.West)))
         gameBoard.add(Field(3, arrayOf(Directions.South,Directions.South_West, Directions.West)))
@@ -59,85 +61,96 @@ class Game : AppCompatActivity(){
         gameBoard.add(Field(8, arrayOf(Directions.East, Directions.West, Directions.North)))
         gameBoard.add(Field(9, arrayOf(Directions.West, Directions.North, Directions.North_West)))
 
+        val animation = AnimationUtils.loadAnimation(this, R.anim.rotate_anim)
+
             b1.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b1,showPlayer ,winner, buttons,0,moves, playervsPlayer)
+                player = play(gameBoard, player,b1,showPlayer ,winner, buttons,0,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b1.isClickable = false
+                b1.startAnimation(animation)
             }
 
             b2.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b2,showPlayer ,winner,buttons,1,moves, playervsPlayer)
+                player = play(gameBoard, player,b2,showPlayer ,winner,buttons,1,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b2.isClickable = false
+                b2.startAnimation(animation)
             }
 
             b3.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b3,showPlayer ,winner,buttons,2,moves, playervsPlayer)
+                player = play(gameBoard, player,b3,showPlayer ,winner,buttons,2,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b3.isClickable = false
+                b3.startAnimation(animation)
             }
 
             b4.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b4,showPlayer ,winner,buttons,3,moves, playervsPlayer)
+                player = play(gameBoard, player,b4,showPlayer ,winner,buttons,3,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b4.isClickable = false
+                b4.startAnimation(animation)
             }
 
             b5.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b5,showPlayer ,winner,buttons,4,moves, playervsPlayer)
+                player = play(gameBoard, player,b5,showPlayer ,winner,buttons,4,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b5.isClickable = false
+                b5.startAnimation(animation)
             }
 
             b6.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b6,showPlayer ,winner,buttons,5,moves, playervsPlayer)
+                player = play(gameBoard, player,b6,showPlayer ,winner,buttons,5,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b6.isClickable = false
+                b6.startAnimation(animation)
             }
 
             b7.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b7,showPlayer ,winner,buttons,6,moves, playervsPlayer)
+                player = play(gameBoard, player,b7,showPlayer ,winner,buttons,6,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b7.isClickable = false
+                b7.startAnimation(animation)
             }
 
             b8.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b8,showPlayer ,winner,buttons,7,moves, playervsPlayer)
+                player = play(gameBoard, player,b8,showPlayer ,winner,buttons,7,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b8.isClickable = false
+                b8.startAnimation(animation)
             }
 
             b9.setOnClickListener {
                 moves += 1
-                player = play(gameBoard, player,b9,showPlayer ,winner,buttons,8,moves, playervsPlayer)
+                player = play(gameBoard, player,b9,showPlayer ,winner,buttons,8,moves, playervsPlayer, animation)
                 if(!playervsPlayer){
-                    moves = moveAI(showPlayer, gameBoard, winner, buttons, moves)
+                    Handler().postDelayed({moves = moveAI(showPlayer, gameBoard, winner, buttons, moves, animation)},750)
                 }
                 b9.isClickable = false
+                b9.startAnimation(animation)
             }
 
             end.setOnClickListener {

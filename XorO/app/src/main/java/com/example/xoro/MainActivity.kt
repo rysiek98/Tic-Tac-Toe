@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.RadioButton
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.start_dialog.view.*
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,42 +18,39 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //Full screen
         fullScreen()
 
         btExit.setOnClickListener{
             finish()
-            System.exit(0)
+            exitProcess(0)
         }
 
         btHelp.setOnClickListener {
-            var help: Intent = Intent(applicationContext, info::class.java)
+            val help: Intent = Intent(applicationContext, info::class.java)
             startActivity(help)
         }
 
-            btStartGame.setOnClickListener {
+        btStartGame.setOnClickListener {
 
-                val dialogView = LayoutInflater.from(this).inflate(R.layout.start_dialog, null)
-                val mBuilder = AlertDialog.Builder(this).setView(dialogView)
-                val mAlert = mBuilder.show()
-                mAlert.window?.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
-                dialogView.rgAIvsPlayer.setOnCheckedChangeListener { group, checkedId ->
-                        val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
-                        dialogView.btPlay.setOnClickListener {
-                                var startGame: Intent = Intent(applicationContext,Game::class.java)
-                                 startGame.putExtra("ID_gameType", gameTypeData.text)
-                                startActivity(startGame)
-                                mAlert.dismiss()
-                            }
+            val dialogView = LayoutInflater.from(this).inflate(R.layout.start_dialog, null)
+            val mBuilder = AlertDialog.Builder(this).setView(dialogView)
+            val mAlert = mBuilder.show()
+            mAlert.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialogView.rgAIvsPlayer.setOnCheckedChangeListener { group, checkedId ->
+                    val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
+                    dialogView.btPlay.setOnClickListener {
+                            var startGame: Intent = Intent(applicationContext,Game::class.java)
+                             startGame.putExtra("ID_gameType", gameTypeData.text)
+                            startActivity(startGame)
+                            mAlert.dismiss()
                         }
-
-                dialogView.btBack.setOnClickListener {
-                    mAlert.dismiss()
-                    fullScreen()
-                }
+                    }
+            dialogView.btBack.setOnClickListener {
+                mAlert.dismiss()
+                fullScreen()
             }
-    }
+        }
+}
 
     override fun onResume() {
         super.onResume()
