@@ -1,6 +1,8 @@
 package com.example.xoro
+import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.Color
+import android.graphics.drawable.AnimationDrawable
 import android.view.animation.Animation
 import android.widget.Button
 import android.widget.TextView
@@ -106,15 +108,30 @@ fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
 
 fun colorWinButtons(buttons: ArrayList<Button>,neighbor: Int, neighborTwo: Int, field: Int, animation: Animation ){
 
-    buttons[field].setBackgroundResource(R.drawable.winbuttons)
-    buttons[neighbor-1].setBackgroundResource(R.drawable.winbuttons)
-    buttons[neighborTwo-1].setBackgroundResource(R.drawable.winbuttons)
+    val buttonAnimation1: AnimationDrawable
+    buttons[field].setBackgroundResource(R.drawable.background_anim)
+    buttonAnimation1 = buttons[field].getBackground() as AnimationDrawable
+
+    val buttonAnimation2: AnimationDrawable
+    buttons[neighbor-1].setBackgroundResource(R.drawable.background_anim)
+    buttonAnimation2 = buttons[neighbor-1].getBackground() as AnimationDrawable
+
+    val buttonAnimation3: AnimationDrawable
+    buttons[neighborTwo-1].setBackgroundResource(R.drawable.background_anim)
+    buttonAnimation3 = buttons[neighborTwo-1].getBackground() as AnimationDrawable
+
     buttons[field].setTextColor(Color.parseColor("#6f0000"))
-    buttons[field].startAnimation(animation)
     buttons[neighbor-1].setTextColor(Color.parseColor("#6f0000"))
-    buttons[neighbor-1].startAnimation(animation)
     buttons[neighborTwo-1].setTextColor(Color.parseColor("#6f0000"))
+
+    buttonAnimation1.start()
+    buttonAnimation2.start()
+    buttonAnimation3.start()
+
+    buttons[field].startAnimation(animation)
+    buttons[neighbor-1].startAnimation(animation)
     buttons[neighborTwo-1].startAnimation(animation)
+
 }
 
 fun firstMoveAi(showPlayer: TextView, gameBoard: ArrayList<Field>,buttons: ArrayList<Button>, moves: Int, animation: Animation): Boolean{
@@ -260,3 +277,4 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
         return moves
     }
 }
+
