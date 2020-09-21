@@ -62,7 +62,6 @@ class Game : AppCompatActivity(){
         gameBoard.add(Field(9, arrayOf(Directions.West, Directions.North, Directions.North_West)))
 
         val animation = AnimationUtils.loadAnimation(this, R.anim.rotate_anim)
-
             b1.setOnClickListener {
                 moves += 1
                 player = play(gameBoard, player,b1,showPlayer ,winner, buttons,0,moves, playervsPlayer, animation)

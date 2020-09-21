@@ -1,4 +1,5 @@
 package com.example.xoro
+import android.animation.ValueAnimator
 import android.graphics.Color
 import android.view.animation.Animation
 import android.widget.Button
@@ -104,6 +105,7 @@ fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
 }
 
 fun colorWinButtons(buttons: ArrayList<Button>,neighbor: Int, neighborTwo: Int, field: Int, animation: Animation ){
+
     buttons[field].setBackgroundResource(R.drawable.winbuttons)
     buttons[neighbor-1].setBackgroundResource(R.drawable.winbuttons)
     buttons[neighborTwo-1].setBackgroundResource(R.drawable.winbuttons)
