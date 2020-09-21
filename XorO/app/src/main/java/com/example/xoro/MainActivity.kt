@@ -38,18 +38,15 @@ class MainActivity : AppCompatActivity() {
                 val mAlert = mBuilder.show()
                 mAlert.window?.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
                 dialogView.rgAIvsPlayer.setOnCheckedChangeListener { group, checkedId ->
-                            val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
-                    dialogView.rgDifficlutlevel.setOnCheckedChangeListener { group, checkedId ->
-                                val rbdifficultLevel: RadioButton = dialogView.findViewById(checkedId)
-                            dialogView.btPlay.setOnClickListener {
-                                    var startGame: Intent = Intent(applicationContext,Game::class.java)
-                                     startGame.putExtra("ID_gameType", gameTypeData.text)
-                                     startGame.putExtra("ID_difficult", rbdifficultLevel.text)
-                                    startActivity(startGame)
-                                    mAlert.dismiss()
-                                }
+                        val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
+                        dialogView.btPlay.setOnClickListener {
+                                var startGame: Intent = Intent(applicationContext,Game::class.java)
+                                 startGame.putExtra("ID_gameType", gameTypeData.text)
+                                startActivity(startGame)
+                                mAlert.dismiss()
+                            }
                         }
-                }
+
                 dialogView.btBack.setOnClickListener {
                     mAlert.dismiss()
                     fullScreen()

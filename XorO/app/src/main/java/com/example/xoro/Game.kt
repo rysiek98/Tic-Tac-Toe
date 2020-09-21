@@ -1,33 +1,18 @@
 package com.example.xoro
-import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_game.*
 
 
-class Game() : AppCompatActivity(){
+class Game : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        var bundle :Bundle ?=intent.extras
-        var gameType = bundle!!.getString("ID_gameType")
-       // var difficultLevel = bundle!!.getString("ID_difficult")
-        var playervsPlayer: Boolean
-        if(gameType == "Player"){
-         playervsPlayer = true
-        }else{
-            playervsPlayer = false
-        }
-        var mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.music)
-        if (mediaPlayer != null) {
-            mediaPlayer.start()
-        }
         //Full screen
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
                 // Set the content to appear under the system bars so that the
@@ -38,6 +23,17 @@ class Game() : AppCompatActivity(){
                 // Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
+
+        var bundle :Bundle ?=intent.extras
+        var gameType = bundle!!.getString("ID_gameType")
+        var playervsPlayer: Boolean
+        if(gameType == "Player"){
+         playervsPlayer = true
+        }else{
+            playervsPlayer = false
+        }
+        val mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.music)
+        mediaPlayer?.start()
 
         var player = Player.X
         val gameBoard = arrayListOf<Field>()
@@ -156,7 +152,6 @@ class Game() : AppCompatActivity(){
                 player = Player.X
                 moves = 0
                 reset(showPlayer ,winner,buttons)
-
             }
 
     }

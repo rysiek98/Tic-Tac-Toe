@@ -26,71 +26,32 @@
 
     <RadioGroup
         android:id="@+id/rgAIvsPlayer"
-        android:layout_width="296dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/rbPlayer"
-            android:layout_width="match_parent"
+            android:layout_width="233dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
             android:text="Player"
             android:textColor="#090909"
             android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/rbAI"
-            android:layout_width="match_parent"
+            android:layout_width="234dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
             android:text="AI"
             android:textColor="#070707"
-            android:textSize="18sp" />
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tviewChooseDifficlut"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:layout_marginTop="30dp"
-        android:text="Choose difficult level:"
-        android:textAlignment="center"
-        android:textColor="#0B0A0A"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <RadioGroup
-        android:id="@+id/rgDifficlutlevel"
-        android:layout_width="310dp"
-        android:layout_height="205dp">
-
-        <RadioButton
-            android:id="@+id/rbEasy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Easy"
-            android:textColor="#121111"
-            android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/rbMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Medium"
-            android:textColor="#0C0C0C"
-            android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/rbHard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hard"
-            android:textColor="#1B1919"
             android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -116,6 +77,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
     </RadioGroup>
 
 </LinearLayout>
