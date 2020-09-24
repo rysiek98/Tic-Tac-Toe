@@ -1,8 +1,6 @@
 package com.example.xoro
 
 
-
-
 class Field(ID: Int,Directions: Array<Directions>) {
 
     private var ID = ID
@@ -22,10 +20,6 @@ class Field(ID: Int,Directions: Array<Directions>) {
         return this.Directions
     }
 
-    fun getID(): Int{
-        return  this.ID
-    }
-
 
     fun directionToID(Directions: Directions,id: Int): Int{
         var ID = id
@@ -38,9 +32,6 @@ class Field(ID: Int,Directions: Array<Directions>) {
             com.example.xoro.Directions.South_East -> ID = ID + 4
             com.example.xoro.Directions.East -> ID = ID + 1
             com.example.xoro.Directions.Nort_East -> ID = ID - 2
-            else -> {
-                ID = 0
-            }
         }
         return  ID
     }

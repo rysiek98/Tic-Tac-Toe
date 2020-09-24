@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btHelp.setOnClickListener {
-            val help: Intent = Intent(applicationContext, info::class.java)
+            val help = Intent(applicationContext, info::class.java)
             startActivity(help)
         }
 
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             dialogView.rgAIvsPlayer.setOnCheckedChangeListener { group, checkedId ->
                     val gameTypeData: RadioButton = dialogView.findViewById(checkedId)
                     dialogView.btPlay.setOnClickListener {
-                            var startGame: Intent = Intent(applicationContext,Game::class.java)
+                            val startGame = Intent(applicationContext,Game::class.java)
                              startGame.putExtra("ID_gameType", gameTypeData.text)
                             startActivity(startGame)
                             mAlert.dismiss()

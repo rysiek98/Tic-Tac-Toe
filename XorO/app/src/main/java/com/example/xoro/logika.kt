@@ -1,6 +1,4 @@
 package com.example.xoro
-import android.animation.ArgbEvaluator
-import android.animation.ValueAnimator
 import android.graphics.Color
 import android.graphics.drawable.AnimationDrawable
 import android.view.animation.Animation
@@ -12,8 +10,8 @@ import kotlin.collections.ArrayList
 fun threeInRow(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,buttons: ArrayList<Button>, animation: Animation): Boolean{
 
     var someoneWinGame = false
-    var neighbor = 0
-    var neighborTwo = 0
+    var neighbor: Int
+    var neighborTwo: Int
     var player = Owner.empty
 
     for(field in 0..8){
@@ -72,7 +70,7 @@ fun play(
         return Player.defalut
     }else {
         if (player == Player.X) {
-            showPlayer.text = "Player X"
+            showPlayer.text = "Player O"
             b.text = "X"
             gameBoard[id].setOwner(Owner.X)
             threeInRow(showPlayer, gameBoard, winner, buttons, animation)
@@ -108,17 +106,14 @@ fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
 
 fun colorWinButtons(buttons: ArrayList<Button>,neighbor: Int, neighborTwo: Int, field: Int, animation: Animation ){
 
-    val buttonAnimation1: AnimationDrawable
     buttons[field].setBackgroundResource(R.drawable.background_anim)
-    buttonAnimation1 = buttons[field].getBackground() as AnimationDrawable
+    val buttonAnimation1: AnimationDrawable = buttons[field].getBackground() as AnimationDrawable
 
-    val buttonAnimation2: AnimationDrawable
     buttons[neighbor-1].setBackgroundResource(R.drawable.background_anim)
-    buttonAnimation2 = buttons[neighbor-1].getBackground() as AnimationDrawable
+    val buttonAnimation2: AnimationDrawable = buttons[neighbor-1].getBackground() as AnimationDrawable
 
-    val buttonAnimation3: AnimationDrawable
     buttons[neighborTwo-1].setBackgroundResource(R.drawable.background_anim)
-    buttonAnimation3 = buttons[neighborTwo-1].getBackground() as AnimationDrawable
+    val buttonAnimation3: AnimationDrawable = buttons[neighborTwo-1].getBackground() as AnimationDrawable
 
     buttons[field].setTextColor(Color.parseColor("#6f0000"))
     buttons[neighbor-1].setTextColor(Color.parseColor("#6f0000"))
@@ -131,7 +126,6 @@ fun colorWinButtons(buttons: ArrayList<Button>,neighbor: Int, neighborTwo: Int, 
     buttons[field].startAnimation(animation)
     buttons[neighbor-1].startAnimation(animation)
     buttons[neighborTwo-1].startAnimation(animation)
-
 }
 
 fun firstMoveAi(showPlayer: TextView, gameBoard: ArrayList<Field>,buttons: ArrayList<Button>, moves: Int, animation: Animation): Boolean{
@@ -144,7 +138,7 @@ fun firstMoveAi(showPlayer: TextView, gameBoard: ArrayList<Field>,buttons: Array
             buttons[4].startAnimation(animation)
 
         }else{
-            var flag: Boolean = true
+            var flag = true
             showPlayer.text = "Player X"
             while(flag){
                 val randomField = (0..8).random()
@@ -167,114 +161,85 @@ fun firstMoveAi(showPlayer: TextView, gameBoard: ArrayList<Field>,buttons: Array
 
 fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,buttons: ArrayList<Button>, moves: Int, animation: Animation): Int{
     if(moves < 9 && !threeInRow(showPlayer, gameBoard, winner, buttons, animation)) {
-    var neighbor = 0
-    var neighborTwo = 0
-    var flaga = firstMoveAi(showPlayer,gameBoard,buttons, moves, animation)
 
-        for (field in 0..8) {
-            if (gameBoard[field].getOwner() == Owner.O && flaga) {
-                for (fieldDirections in gameBoard[field].getDirections()) {
-                    neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
-                    if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
-                        for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
-                            neighborTwo =
-                                gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
-                            if (gameBoard[neighborTwo - 1].getOwner() == Owner.X && fieldDirections == neighborDirections) {
-                                showPlayer.text = "Player X"
-                                buttons[neighbor - 1].text = "O"
-                                gameBoard[neighbor - 1].setOwner(Owner.O)
-                                threeInRow(showPlayer, gameBoard, winner, buttons, animation)
-                                flaga = false
-                                buttons[neighbor - 1].isClickable = false
-                                buttons[neighbor - 1].startAnimation(animation)
-                            }
-                        }
-                    } else if (gameBoard[neighbor - 1].getOwner() == Owner.O && flaga) {
-                        for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
-                            neighborTwo =
-                                gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
-                            if (gameBoard[neighborTwo - 1].getOwner() == Owner.empty && fieldDirections == neighborDirections) {
-                                showPlayer.text = "Player X"
-                                buttons[neighborTwo - 1].text = "O"
-                                gameBoard[neighborTwo - 1].setOwner(Owner.O)
-                                threeInRow(showPlayer, gameBoard, winner, buttons, animation)
-                                flaga = false
-                                buttons[neighborTwo - 1].isClickable = false
-                                buttons[neighborTwo - 1].startAnimation(animation)
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        }
-
-        for (field in 0..8) {
-
-            if (gameBoard[field].getOwner() == Owner.X && flaga) {
-                for (fieldDirections in gameBoard[field].getDirections()) {
-                    neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
-                    if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
-                        for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
-                            neighborTwo =
-                                gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
-                            if (gameBoard[neighborTwo - 1].getOwner() == Owner.X && fieldDirections == neighborDirections) {
-                                showPlayer.text = "Player X"
-                                buttons[neighbor - 1].text = "O"
-                                gameBoard[neighbor - 1].setOwner(Owner.O)
-                                threeInRow(showPlayer, gameBoard, winner, buttons, animation)
-                                flaga = false
-                                buttons[neighbor - 1].isClickable = false
-                                buttons[neighbor - 1].startAnimation(animation)
-                            }
-
-                        }
-                    } else if (gameBoard[neighbor - 1].getOwner() == Owner.X && flaga) {
-                        for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
-                            neighborTwo =
-                                gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
-                            if (gameBoard[neighborTwo - 1].getOwner() == Owner.empty && fieldDirections == neighborDirections) {
-                                showPlayer.text = "Player X"
-                                buttons[neighborTwo - 1].text = "O"
-                                gameBoard[neighborTwo - 1].setOwner(Owner.O)
-                                threeInRow(showPlayer, gameBoard, winner, buttons, animation)
-                                flaga = false
-                                buttons[neighborTwo - 1].isClickable = false
-                                buttons[neighborTwo - 1].startAnimation(animation)
-                            }
-
-                        }
-                    }
-
-                }
-            }
-        }
-
-        if (flaga) {
-            for (field in 0..8) {
-                if (gameBoard[field].getOwner() == Owner.O && flaga) {
-                    for (fieldDirections in gameBoard[field].getDirections()) {
-                        neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
-                        if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
-                            showPlayer.text = "Player X"
-                            buttons[neighbor - 1].text = "O"
-                            gameBoard[neighbor - 1].setOwner(Owner.O)
-                            threeInRow(showPlayer, gameBoard, winner, buttons, animation)
-                            buttons[neighbor - 1].isClickable = false
-                            buttons[neighbor - 1].startAnimation(animation)
-                            flaga = false
-                            break
-                        }
-                    }
-                }
-            }
-        }
-
+        var flaga = firstMoveAi(showPlayer,gameBoard,buttons, moves, animation)
+        flaga = selectField(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.X)
+        flaga = selectField(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.O)
+        selectFieldNeutral(showPlayer, gameBoard, winner, buttons, animation, flaga)
         threeInRow(showPlayer, gameBoard, winner, buttons, animation)
         return moves + 1
     }else{
         return moves
     }
+}
+
+fun selectField(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean, owner: Owner): Boolean {
+
+    var neighbor: Int
+    var neighborTwo: Int
+    var flaga: Boolean = flag
+    for (field in 0..8) {
+        if (gameBoard[field].getOwner() == owner && flaga) {
+            for (fieldDirections in gameBoard[field].getDirections()) {
+                neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
+                if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
+                    for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
+                        neighborTwo =
+                            gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
+                        if (gameBoard[neighborTwo - 1].getOwner() == Owner.X && fieldDirections == neighborDirections) {
+                            showPlayer.text = "Player X"
+                            buttons[neighbor - 1].text = "O"
+                            gameBoard[neighbor - 1].setOwner(Owner.O)
+                            threeInRow(showPlayer, gameBoard, winner, buttons, animation)
+                            flaga = false
+                            buttons[neighbor - 1].isClickable = false
+                            buttons[neighbor - 1].startAnimation(animation)
+                        }
+                    }
+                } else if (gameBoard[neighbor - 1].getOwner() == owner && flaga) {
+                    for (neighborDirections in gameBoard[neighbor - 1].getDirections()) {
+                        neighborTwo =
+                            gameBoard[neighbor - 1].directionToID(neighborDirections, neighbor)
+                        if (gameBoard[neighborTwo - 1].getOwner() == Owner.empty && fieldDirections == neighborDirections) {
+                            showPlayer.text = "Player X"
+                            buttons[neighborTwo - 1].text = "O"
+                            gameBoard[neighborTwo - 1].setOwner(Owner.O)
+                            threeInRow(showPlayer, gameBoard, winner, buttons, animation)
+                            flaga = false
+                            buttons[neighborTwo - 1].isClickable = false
+                            buttons[neighborTwo - 1].startAnimation(animation)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return flaga
+}
+
+fun selectFieldNeutral(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean): Boolean{
+
+    var flaga = flag
+    var neighbor: Int
+    if (flaga) {
+        for (field in 0..8) {
+            if (gameBoard[field].getOwner() == Owner.O && flaga) {
+                for (fieldDirections in gameBoard[field].getDirections()) {
+                    neighbor = gameBoard[field].directionToID(fieldDirections, field + 1)
+                    if (gameBoard[neighbor - 1].getOwner() == Owner.empty) {
+                        showPlayer.text = "Player X"
+                        buttons[neighbor - 1].text = "O"
+                        gameBoard[neighbor - 1].setOwner(Owner.O)
+                        threeInRow(showPlayer, gameBoard, winner, buttons, animation)
+                        buttons[neighbor - 1].isClickable = false
+                        buttons[neighbor - 1].startAnimation(animation)
+                        flaga = false
+                        break
+                    }
+                }
+            }
+        }
+    }
+    return flaga
 }
 

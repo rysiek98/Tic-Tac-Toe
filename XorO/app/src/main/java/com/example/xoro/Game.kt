@@ -28,7 +28,7 @@ class Game : AppCompatActivity(){
 
         val bundle :Bundle ?=intent.extras
         val gameType = bundle!!.getString("ID_gameType")
-        var playervsPlayer: Boolean = false
+        var playervsPlayer = false
         if(gameType == "Player"){
          playervsPlayer = true
         }
@@ -39,7 +39,7 @@ class Game : AppCompatActivity(){
         var player = Player.X
         val gameBoard = arrayListOf<Field>()
         var moves = 0
-        var buttons = arrayListOf<Button>()
+        val buttons = arrayListOf<Button>()
         //Game buttons
         buttons.add(b1)
         buttons.add(b2)
