@@ -33,8 +33,8 @@
             android:id="@+id/rbPlayer"
             android:layout_width="207dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
-            android:text="Player"
+            android:layout_marginLeft="70dp"
+            android:text="Player vs Player"
             android:textColor="#090909"
             android:textSize="18sp" />
 
@@ -42,8 +42,8 @@
             android:id="@+id/rbAI"
             android:layout_width="208dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
-            android:text="AI"
+            android:layout_marginLeft="70dp"
+            android:text="Player vs Computer"
             android:textColor="#070707"
             android:textSize="18sp" />
 

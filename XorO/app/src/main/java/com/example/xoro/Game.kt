@@ -29,7 +29,7 @@ class Game : AppCompatActivity(){
         val bundle :Bundle ?=intent.extras
         val gameType = bundle!!.getString("ID_gameType")
         var playervsPlayer = false
-        if(gameType == "Player"){
+        if(gameType == "Player vs Player"){
          playervsPlayer = true
         }
 
