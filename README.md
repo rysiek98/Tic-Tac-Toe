@@ -8,11 +8,11 @@ Somescreen shots:
 ![Home](/Tic-Tac-Toe_screenshots/home.PNG)
   
 ## Game rules: <h3>
-![Home](/Tic-Tac-Toe_screenshots/info.PNG
+![Game rules](/Tic-Tac-Toe_screenshots/info.PNG
   
 ## Start game screen: <h3>
-![Home](/Tic-Tac-Toe_screenshots/loadscreen.PNG
+![Start game screen](/Tic-Tac-Toe_screenshots/loadscreen.PNG
   
 ## Game: <h3>
-![Home](/Tic-Tac-Toe_screenshots/game.PNG
+![Game](/Tic-Tac-Toe_screenshots/game.PNG
 
