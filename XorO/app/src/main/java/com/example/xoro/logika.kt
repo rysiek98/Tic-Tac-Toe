@@ -90,7 +90,7 @@ fun play(
     }
 }
 
-fun reset(showPlayer: TextView, winner: TextView ,buttons: ArrayList<Button>){
+fun resetGame(showPlayer: TextView, winner: TextView, buttons: ArrayList<Button>){
 
     for(field in 0..8) {
         buttons[field].text = ""
@@ -163,9 +163,9 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
     if(moves < 9 && !threeInRow(showPlayer, gameBoard, winner, buttons, animation)) {
 
         var flaga = firstMoveAi(showPlayer,gameBoard,buttons, moves, animation)
-        flaga = selectField(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.X)
-        flaga = selectField(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.O)
-        selectFieldNeutral(showPlayer, gameBoard, winner, buttons, animation, flaga)
+        flaga = selectFieldToNextMove(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.X)
+        flaga = selectFieldToNextMove(showPlayer, gameBoard, winner, buttons, animation, flaga, Owner.O)
+        selectFieldInNeutralSituation(showPlayer, gameBoard, winner, buttons, animation, flaga)
         threeInRow(showPlayer, gameBoard, winner, buttons, animation)
         return moves + 1
     }else{
@@ -173,7 +173,7 @@ fun moveAI(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView ,
     }
 }
 
-fun selectField(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean, owner: Owner): Boolean {
+fun selectFieldToNextMove(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean, owner: Owner): Boolean {
 
     var neighbor: Int
     var neighborTwo: Int
@@ -217,7 +217,7 @@ fun selectField(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextV
     return flaga
 }
 
-fun selectFieldNeutral(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean): Boolean{
+fun selectFieldInNeutralSituation(showPlayer: TextView, gameBoard: ArrayList<Field>, winner: TextView, buttons: ArrayList<Button>, animation: Animation, flag: Boolean): Boolean{
 
     var flaga = flag
     var neighbor: Int

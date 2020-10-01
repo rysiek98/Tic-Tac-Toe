@@ -14,17 +14,7 @@ class Game : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-
-        //Full screen
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-                // Set the content to appear under the system bars so that the
-                // content doesn't resize when the system bars hide and show.
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                // Hide the nav bar and status bar
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN)
+        fullScreen()
 
         val bundle :Bundle ?=intent.extras
         val gameType = bundle!!.getString("ID_gameType")
@@ -40,7 +30,7 @@ class Game : AppCompatActivity(){
         val gameBoard = arrayListOf<Field>()
         var moves = 0
         val buttons = arrayListOf<Button>()
-        //Game buttons
+        //Game buttons add to buttons list
         buttons.add(b1)
         buttons.add(b2)
         buttons.add(b3)
@@ -50,7 +40,7 @@ class Game : AppCompatActivity(){
         buttons.add(b7)
         buttons.add(b8)
         buttons.add(b9)
-        //Each game button has some neighbourgs
+        //Each game field has neighbours
         gameBoard.add(Field(1, arrayOf(Directions.South,Directions.East, Directions.South_East)))
         gameBoard.add(Field(2, arrayOf(Directions.South,Directions.East, Directions.West)))
         gameBoard.add(Field(3, arrayOf(Directions.South,Directions.South_West, Directions.West)))
@@ -163,9 +153,21 @@ class Game : AppCompatActivity(){
                 }
                 player = Player.X
                 moves = 0
-                reset(showPlayer ,winner,buttons)
+                resetGame(showPlayer ,winner,buttons)
             }
 
+    }
+
+    fun fullScreen(){
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+                // Set the content to appear under the system bars so that the
+                // content doesn't resize when the system bars hide and show.
+                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                // Hide the nav bar and status bar
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
 
 }
