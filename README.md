@@ -3,7 +3,7 @@
 This project is my first contact with Android app development, 
 to learn something about android I decided to create popular game Tic-Tac-Toe using Kotlin for Android devices.
 
-Somescreen shots:
+Some screenshots:
 
 ## Home: <h3>
 ![Home](/Tic-Tac-Toe_screenshots/home.PNG)
