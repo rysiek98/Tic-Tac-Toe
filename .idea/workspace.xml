@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35ab657e-6ca6-4000-b3a0-205196be6adb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/XorO/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/androidTest/java/com/example/xoro/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/androidTest/java/com/example/xoro/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/Field.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/Field.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/enum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/enum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/info.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/info.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/java/com/example/xoro/logika.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/java/com/example/xoro/logika.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/8_Bit_Dreamscape.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/8_Bit_Dreamscape.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/anim/rotate_anim.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/anim/rotate_anim.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/background2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/background2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/background_anim.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/background_anim.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/buttons9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/buttons9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/start_dialog_shape.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/start_dialog_shape.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/drawable/winbuttons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/drawable/winbuttons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/layout/activity_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/layout/activity_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/layout/activity_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/layout/activity_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/layout/start_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/layout/start_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/raw/music.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/raw/music.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XorO/app/src/test/java/com/example/xoro/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XorO/.idea/app/src/test/java/com/example/xoro/ExampleUnitTest.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1k1A33Ou5MNec0qLeWf4rLEpxxI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michal\Documents\GitHub\Tic-Tac-Toe-Android-\XorO\.idea\app" />
+      <recent name="C:\Users\Michal\Documents\GitHub\Tic-Tac-Toe-Android-\XorO\.idea" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="TestNG">
+      <option name="SUITE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35ab657e-6ca6-4000-b3a0-205196be6adb" name="Default Changelist" comment="" />
+      <created>1604857520674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604857520674</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604910917208">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604910917208" />
+  </component>
+</project>
